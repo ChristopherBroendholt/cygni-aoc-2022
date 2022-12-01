@@ -7,7 +7,7 @@ fn main(){
         .expect("Should have been able to read the file");
     
         
-    let mut caloriesPerPersonStr = contents.split("\r\n");
+    let mut caloriesPerPersonStr = contents.lines()
     let mut caloriesPerPerson = Vec::new();
 
     let mut calories = 0;
@@ -18,7 +18,8 @@ fn main(){
 
             calories = 0;
         }else{
-            calories += cal.parse::<i32>().unwrap();
+            let calorie = cal.parse::<i32>().unwrap();
+            calories += calories
         }
     }
 
