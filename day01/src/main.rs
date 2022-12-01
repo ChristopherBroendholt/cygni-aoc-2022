@@ -7,19 +7,19 @@ fn main(){
         .expect("Should have been able to read the file");
     
         
-    let mut caloriesPerPersonStr = contents.lines()
+    let input:Vec<&str> = contents.lines().collect();
     let mut caloriesPerPerson = Vec::new();
 
     let mut calories = 0;
+    let len = input.len();
 
-    for cal in caloriesPerPersonStr {
+    for cal in input {
         if cal == "" {
             caloriesPerPerson.push(calories);
-
             calories = 0;
         }else{
             let calorie = cal.parse::<i32>().unwrap();
-            calories += calories
+            calories += calorie;
         }
     }
 
@@ -33,7 +33,7 @@ fn main(){
     let last = caloriesPerPerson[length - 3];
     
     let total = first + second + last;
-
+    
     let part = match env::var("part") {
         Ok(val) => val,
         Err(_e) => "part1".to_string(),
