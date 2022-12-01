@@ -40,8 +40,8 @@ fn main(){
 
     println!("Rust");
     if part == "part2" {
-        println!("{total}");
+        println!("{}", total);
     } else {
-        println!("{first}");
+        println!("{}", first);
     }
 }

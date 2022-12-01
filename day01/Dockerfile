@@ -1,9 +1,9 @@
-FROM rust:1.56 as builder
-WORKDIR /usr/src/aoc
+FROM rust:1.61 as builder
+WORKDIR /usr/src/day01
 COPY . .
 RUN cargo install --path .
 
-FROM rust:1.56-slim
-COPY --from=builder /usr/local/cargo/bin/aoc /usr/local/bin/aoc
+FROM debian:buster-slim
+COPY --from=builder /usr/local/cargo/bin/day01 /usr/local/bin/day01
 COPY input.txt .
-CMD ["aoc"]
+CMD ["day01"]
