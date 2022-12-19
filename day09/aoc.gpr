@@ -1,0 +1,10 @@
+project Aoc is
+
+   for Main use ("aoc.adb");
+   for Object_Dir use ".objs";
+
+   package Compiler is
+      for Default_Switches ("Ada") use ("-g");
+   end Compiler;
+
+end Aoc;

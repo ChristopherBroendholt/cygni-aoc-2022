@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "xstring": "cpp",
+        "iosfwd": "cpp",
+        "iostream": "cpp",
+        "vector": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "enabled",
+    "ada.projectFile": "day09/aoc.gpr"
+}
