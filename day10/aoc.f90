@@ -89,15 +89,15 @@ program aoc
             do j = 1, instructions(i)%cycles
                 if (cycle_index == 20) then
                     signal_strength = signal_strength + cycle_sum * cycle_index
-                    print *, (cycle_sum * cycle_index)
-                    print *, "20: ", signal_strength
+                    ! print *, (cycle_sum * cycle_index)
+                    ! print *, "20: ", signal_strength
                 else if (modulo(cycle_index - 20, 40)==0) then
                     signal_strength = signal_strength + cycle_sum * cycle_index
-                    print *, (cycle_sum * cycle_index)
-                    print *, "%40: ", signal_strength
+                    ! print *, (cycle_sum * cycle_index)
+                    ! print *, "%40: ", signal_strength
                 endif
 
-                print *, "Cycle: ", cycle_index, cycle_sum, instructions(i)%register_value, instructions(i)%noop
+                ! print *, "Cycle: ", cycle_index, cycle_sum, instructions(i)%register_value, instructions(i)%noop
                 cycle_index = cycle_index + 1
             
             end do
@@ -105,7 +105,7 @@ program aoc
             cycle_sum = cycle_sum + instructions(i)%register_value
         end do
 
-        print *, cycle_sum
+        ! print *, cycle_sum
         print *, signal_strength
     end if
 
@@ -127,7 +127,7 @@ program aoc
                 end if
 
                 new_cycle_index = cycle_index - (line_index * 40)
-                print *, "new ", new_cycle_index, " sum ",  cycle_sum
+                ! print *, "new ", new_cycle_index, " sum ",  cycle_sum
 
                 if (new_cycle_index == cycle_sum) then
                     screen_lines(line_index)(new_cycle_index:new_cycle_index) = "#"
@@ -145,7 +145,7 @@ program aoc
             end do
             
             do h = 0, 5
-                print *, screen_lines(h)
+                ! print *, screen_lines(h)
             end do
             cycle_sum = cycle_sum + instructions(i)%register_value
         end do
